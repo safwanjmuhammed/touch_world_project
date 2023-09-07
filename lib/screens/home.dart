@@ -39,9 +39,12 @@ class _HomeScreenState extends State<HomeScreen> {
             style: GoogleFonts.poppins(),
           ),
           actions: [
-            IconButton(onPressed: () {}, icon: Icon(FontAwesomeIcons.heart)),
-            const Padding(padding: EdgeInsets.only(right: 15)),
-            const Icon(Icons.shopping_cart)
+            IconButton(
+                onPressed: () {}, icon: const Icon(FontAwesomeIcons.heart)),
+            Padding(
+              padding: const EdgeInsets.all(8.0),
+              child: const Icon(Icons.shopping_cart),
+            )
           ],
         ),
         body: SafeArea(
@@ -61,15 +64,20 @@ class _HomeScreenState extends State<HomeScreen> {
                               MaterialPageRoute(
                                   builder: (context) => ProductScreen(
                                         image: productData[index].image,
+                                        brand: productData[index].brand,
+                                        name: productData[index].name,
+                                        discription:
+                                            productData[index].description,
+                                        price: productData[index].price,
                                       ))),
                           child: Container(
                             decoration: BoxDecoration(
-                                borderRadius: BorderRadius.circular(10),
-                                boxShadow: const [
-                                  BoxShadow(color: Colors.grey, blurRadius: 6)
-                                ],
-                                color:
-                                    const Color.fromARGB(255, 224, 221, 221)),
+                              borderRadius: BorderRadius.circular(10),
+                              boxShadow: const [
+                                BoxShadow(color: Colors.grey, blurRadius: 6)
+                              ],
+                              color: const Color.fromARGB(255, 241, 241, 237),
+                            ),
                             child: Column(
                               children: [
                                 Row(
@@ -92,25 +100,27 @@ class _HomeScreenState extends State<HomeScreen> {
                                                     .size
                                                     .width /
                                                 7)),
-                                    Column(
-                                      crossAxisAlignment:
-                                          CrossAxisAlignment.start,
-                                      children: [
-                                        Text(
-                                          productData[index].name,
-                                          style: GoogleFonts.poppins(
-                                            fontWeight: FontWeight.w500,
-                                          ),
-                                        ),
-                                        Text(productData[index].brand,
+                                    Flexible(
+                                      child: Column(
+                                        crossAxisAlignment:
+                                            CrossAxisAlignment.start,
+                                        children: [
+                                          Text(
+                                            productData[index].name,
                                             style: GoogleFonts.poppins(
-                                                fontWeight: FontWeight.w400)),
-                                        Text(
-                                          '₹${productData[index].price}',
-                                          style: GoogleFonts.poppins(
-                                              fontWeight: FontWeight.bold),
-                                        )
-                                      ],
+                                              fontWeight: FontWeight.w500,
+                                            ),
+                                          ),
+                                          Text(productData[index].brand,
+                                              style: GoogleFonts.poppins(
+                                                  fontWeight: FontWeight.w400)),
+                                          Text(
+                                            '₹${productData[index].price}',
+                                            style: GoogleFonts.poppins(
+                                                fontWeight: FontWeight.bold),
+                                          )
+                                        ],
+                                      ),
                                     )
                                   ],
                                 ),
