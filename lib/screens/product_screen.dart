@@ -23,12 +23,25 @@ class ProductScreen extends StatefulWidget {
 class _ProductScreenState extends State<ProductScreen> {
   @override
   Widget build(BuildContext context) {
-    double mheight = MediaQuery.of(context).size.height;
-    double mWidth = MediaQuery.of(context).size.width;
+    // double mheight = MediaQuery.of(context).size.height;
+    // double mWidth = MediaQuery.of(context).size.width;
     //
     return Scaffold(
+        backgroundColor: Colors.white,
         appBar: AppBar(
-          backgroundColor: const Color.fromARGB(255, 241, 241, 237),
+          backgroundColor: Colors.white,
+          actions: [
+            IconButton(
+                onPressed: () {}, icon: const Icon(FontAwesomeIcons.heart)),
+            const Padding(
+              padding: EdgeInsets.all(8.0),
+              child: Icon(Icons.shopping_cart),
+            )
+          ],
+          title: Text(
+            widget.name,
+            style: GoogleFonts.poppins(),
+          ),
         ),
         body: SingleChildScrollView(
           child: Padding(
@@ -38,13 +51,19 @@ class _ProductScreenState extends State<ProductScreen> {
               children: [
                 Container(
                   decoration: BoxDecoration(
-                      color: const Color.fromARGB(255, 241, 241, 237),
-                      borderRadius: BorderRadius.only(
-                          bottomRight: Radius.circular(40),
-                          bottomLeft: Radius.circular(40))),
+                    color: Colors.grey[300],
+                    borderRadius: const BorderRadius.only(
+                        topLeft: Radius.circular(40),
+                        topRight: Radius.circular(40),
+                        bottomRight: Radius.circular(40),
+                        bottomLeft: Radius.circular(40)),
+                  ),
                   height: 400,
                   width: double.infinity,
-                  child: Image.network(widget.image),
+                  child: Image.network(
+                    widget.image,
+                    fit: BoxFit.fill,
+                  ),
                 ),
                 Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -58,11 +77,11 @@ class _ProductScreenState extends State<ProductScreen> {
                     ),
                     Row(
                       children: [
-                        Padding(
-                          padding: const EdgeInsets.only(right: 10),
+                        const Padding(
+                          padding: EdgeInsets.only(right: 10),
                           child: Icon(
                             Icons.star,
-                            color: Color.fromARGB(255, 216, 148, 52),
+                            color: Color.fromARGB(255, 234, 165, 68),
                           ),
                         ),
                         Text('(4.0)',

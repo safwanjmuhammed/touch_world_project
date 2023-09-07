@@ -41,9 +41,9 @@ class _HomeScreenState extends State<HomeScreen> {
           actions: [
             IconButton(
                 onPressed: () {}, icon: const Icon(FontAwesomeIcons.heart)),
-            Padding(
-              padding: const EdgeInsets.all(8.0),
-              child: const Icon(Icons.shopping_cart),
+            const Padding(
+              padding: EdgeInsets.all(8.0),
+              child: Icon(Icons.shopping_cart),
             )
           ],
         ),
@@ -76,7 +76,7 @@ class _HomeScreenState extends State<HomeScreen> {
                               boxShadow: const [
                                 BoxShadow(color: Colors.grey, blurRadius: 6)
                               ],
-                              color: const Color.fromARGB(255, 241, 241, 237),
+                              color: Colors.grey[300],
                             ),
                             child: Column(
                               children: [
