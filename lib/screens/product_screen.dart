@@ -112,14 +112,17 @@ class _ProductScreenState extends State<ProductScreen> {
                 Padding(
                   padding: const EdgeInsets.all(8.0),
                   child: Center(
-                      child: ElevatedButton(
-                          style: ElevatedButton.styleFrom(
-                              backgroundColor: Colors.black),
-                          onPressed: () {},
-                          child: Text(
-                            'Buy Now',
-                            style: GoogleFonts.poppins(color: Colors.white),
-                          ))),
+                      child: SizedBox(
+                    width: double.infinity,
+                    child: ElevatedButton(
+                        style: ElevatedButton.styleFrom(
+                            backgroundColor: Colors.black),
+                        onPressed: () {},
+                        child: Text(
+                          'Buy Now',
+                          style: GoogleFonts.poppins(color: Colors.white),
+                        )),
+                  )),
                 )
               ],
             ),

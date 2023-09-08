@@ -51,7 +51,10 @@ class _HomeScreenState extends State<HomeScreen> {
           child: Column(
             children: [
               if (productData.isEmpty)
-                const Center(child: CircularProgressIndicator()),
+                const Center(
+                    child: CircularProgressIndicator(
+                  color: Colors.black,
+                )),
               Expanded(
                 child: ListView.builder(
                     itemCount: productData.length,
